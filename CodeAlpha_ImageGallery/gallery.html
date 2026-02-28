@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food Image Gallery</title>
+<link rel="stylesheet" href="gallery.css">
+
+
+</head>
+
+<body>
+
+<h1>🍽️ Food Image Gallery</h1>
+
+<!-- FILTERS -->
+<div class="filters">
+    <button class="active" onclick="filterImages('all', this)">All</button>
+    <button onclick="filterImages('breakfast', this)">Breakfast</button>
+    <button onclick="filterImages('lunch', this)">Lunch</button>
+    <button onclick="filterImages('dessert', this)">Desserts</button>
+</div>
+
+<!-- GALLERY -->
+<div class="gallery">
+
+    <div class="card breakfast">
+        <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0">
+        <div class="overlay">Breakfast</div>
+    </div>
+
+    <div class="card lunch">
+        <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe">
+        <div class="overlay">Lunch</div>
+    </div>
+
+    <div class="card dessert">
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587">
+        <div class="overlay">Dessert</div>
+    </div>
+
+    <div class="card breakfast">
+        <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8">
+        <div class="overlay">Breakfast</div>
+    </div>
+
+    <div class="card lunch">
+        <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092">
+        <div class="overlay">Lunch</div>
+    </div>
+
+    <div class="card dessert">
+        <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b">
+        <div class="overlay">Dessert</div>
+    </div>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+    <span class="close">&times;</span>
+    <span class="prev">&#10094;</span>
+    <img>
+    <span class="next">&#10095;</span>
+</div>
+
+<script src="gallery.js">
+</script>
+
+</body>
+</html>

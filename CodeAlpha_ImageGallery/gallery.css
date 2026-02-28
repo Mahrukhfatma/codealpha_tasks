@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    padding: 40px;
+    background: #e6f2ff; /* LIGHT BLUE */
+    color: #333;
+}
+
+/* ---------- HEADING ---------- */
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    letter-spacing: 1.5px;
+    color: #1a4d80;
+}
+
+/* ---------- FILTER BUTTONS ---------- */
+.filters {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.filters button {
+    padding: 10px 22px;
+    margin: 5px;
+    border: none;
+    border-radius: 25px;
+    background: #cce4ff;
+    color: #1a4d80;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filters button:hover,
+.filters button.active {
+    background: #1a4d80;
+    color: #fff;
+}
+
+/* ---------- GALLERY GRID ---------- */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+/* ---------- CARD ---------- */
+.card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(8px);
+    cursor: pointer;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 35px rgba(0,0,0,0.2);
+}
+
+/* ---------- IMAGE (SAME SIZE FOR ALL) ---------- */
+.card img {
+    width: 100%;
+    height: 220px;   /* FIXED HEIGHT */
+    object-fit: cover;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.card:hover img {
+    transform: scale(1.15);
+    filter: brightness(110%);
+}
+
+/* ---------- OVERLAY ---------- */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}
+
+/* ---------- LIGHTBOX ---------- */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.lightbox img {
+    max-width: 85%;
+    max-height: 85%;
+    border-radius: 12px;
+}
+
+/* ---------- LIGHTBOX CONTROLS ---------- */
+.close, .prev, .next {
+    position: absolute;
+    color: #fff;
+    font-size: 36px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.close {
+    top: 25px;
+    right: 35px;
+}
+
+.prev {
+    left: 35px;
+}
+
+.next {
+    right: 35px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 600px) {
+    body {
+        padding: 20px;
+    }
+    .card img {
+        height: 200px;
+    }
+}
